@@ -3,7 +3,6 @@
 TycoonGame::TycoonGame() {
     m_gameOver = false;
     m_finalScore = 0;
-    m_gameDifficulty = 1;
 }
 
 int TycoonGame::getFinalScore() const {

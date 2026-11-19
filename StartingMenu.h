@@ -8,11 +8,13 @@ private:
     std::string m_gameTitle;
     TycoonGame m_tycoon;
     int m_menuChoice;
+    char m_gameDifficulty;
 public:
     StartingMenu();
 private:
-    void displayGameTitle();
+    void displayGameTitle() const;
     void displayMenuOptions();
+    void selectMenuOption();
 };
 
 

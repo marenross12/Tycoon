@@ -2,13 +2,13 @@
 #define TYCOON_TYCOONGAME_H
 #include "Round.h"
 
+class StartingMenu;
 
 class TycoonGame {
-protected:
+private:
     Round m_gameRound;
     bool m_gameOver;
     int m_finalScore;
-    int m_gameDifficulty;
 public:
     TycoonGame();
     int getFinalScore() const;
