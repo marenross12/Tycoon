@@ -58,3 +58,24 @@ void DeckOfCards::shuffleDeck() {
 
        std::shuffle(m_deck.begin(),m_deck.end(),gen);
 }
+
+void DeckOfCards::Deal(Player &P, NPC &N, NPC &C, NPC &Craig) {
+    shuffleDeck();
+    distribute(P,N,C,Craig,m_deck.size()-1);
+
+
+
+}
+void DeckOfCards::distribute(Player &P, NPC &N, NPC &C, NPC &Rob, int size) {
+    if (size<4) {
+        P.fillHand(m_deck.at(size));
+        N.fillHand(m_deck.at(size-1));
+    }else {
+        P.fillHand(m_deck.at(size));
+        N.fillHand(m_deck.at(size-1));
+        C.fillHand(m_deck.at(size-2));
+        Rob.fillHand(m_deck.at(size-3));
+        distribute(P,N,C,Rob,size-4);
+    }
+
+}
