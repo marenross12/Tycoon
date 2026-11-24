@@ -7,7 +7,7 @@
 #include <vector>
 
 class NPC : public Players {
-private:
+protected:
     std::string m_npcName;
     std::string m_npcRole;
     std::vector <Card> m_npcHand;
@@ -17,11 +17,13 @@ public:
 
     }
     ~NPC() override {
-        std::cout << "NPC object destroyed!!!! EVIL NPC DEFEATED!!!" << std::endl;
+        std::cout << "\nNPC object destroyed!!!! EVIL NPC DEFEATED!!!" << std::endl;
     }
 
     std::string getNPCName() {return m_npcName;}
-    std::vector <Card> getNPCHand() {return m_npcHand;}
+    virtual std::vector <Card> getNPCHand() {
+        return m_npcHand;
+    }
 
     std::string getNPCRole() {return m_npcRole;}
     virtual void speak()=0;

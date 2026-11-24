@@ -1,6 +1,6 @@
 
-#ifndef PLAYER_PLAYER_H
-#define PLAYER_PLAYER_H
+#ifndef PLAYER_PLAYERS_H
+#define PLAYER_PLAYERS_H
 #include <iostream>
 #include <vector>
 #include "Card.h"
@@ -9,6 +9,7 @@ class Players {
 private:
     std::string m_playerName;
     std::string m_playerRole;
+
     std::vector <Card>m_playerHand;
 public:
     Players() {
@@ -17,25 +18,22 @@ public:
     }
 
     virtual ~Players() {
-        std::cout << "Player object destroyed!!! MWWHAHAHAHAHAHA" << std::endl;
+        std::cout << "\nPlayer object destroyed!!! MWWHAHAHAHAHAHA" << std::endl;
     }
     std::string getPlayerName() {
         return m_playerName;
     }
     std::vector <Card> getPlayerHand() {
+        for (int i = 0; i < m_playerHand.size(); i++) {
+            if (i % 2 == 0) {
+                std::cout<<std::endl;
+            }
+            std::cout << m_playerHand[i] << ", ";
+        }
+        std::cout << std::endl;
         return m_playerHand;
     }
-private:
-    //should probably be in round class
-    /*void dealCards(std::vector<Card>& deck) { //should take in a 52 card deck and store 13 cards in the players hand. should use a deckOfCards object??
-        shuffleDeck(deck); //should store new shuffled deck into the vector for deck
-        for (int i = 0; i < 13; ++i) {
-            m_playerHand.push_back(deck[i]);
-        }
 
-    }*/
-
-public:
       void playCard(int cardIndex) { //why did clang have me make this static?
         //check that the cardIndex is valid and in range
         if (cardIndex >= 0 && cardIndex < m_playerHand.size()) {
@@ -63,4 +61,4 @@ public:
 
 
 
-#endif //PLAYER_PLAYER_H
+#endif //PLAYER_PLAYERS_H

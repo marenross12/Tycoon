@@ -16,6 +16,9 @@ public:
         std::cout << lines[index] << std::endl;
 
     }
+    std::vector <Card> getNPCHand() override {
+        return m_npcHand;
+    }
 };
 
 #endif //PLAYER_BABYNPC2_H

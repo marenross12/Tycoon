@@ -22,6 +22,9 @@ public:
     ~BabyNPC1() override {
         std::cout << "Baby NPC 1 object destroyed!!!" << std::endl;
     }
+    /*std::vector<Card> getNPCHand() override {
+        return m_npcHand;
+    }*/
 };
 
 #endif //PLAYER_BABYNPC1_H
