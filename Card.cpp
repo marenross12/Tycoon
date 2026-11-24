@@ -16,6 +16,9 @@ Card::Card(int value, std::string suit) {
         case 2:
             m_face="4";
             m_strengthValue = value;
+            if (m_suit.compare("Heart")==0) {
+                m_Heart2=true;
+            }
             break;
         case 3:
             m_face="5";

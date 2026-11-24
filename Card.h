@@ -12,8 +12,13 @@ protected:
     int m_strengthValue;
     std::string m_face;
     std::string m_suit;
+private:
+    bool m_Heart2 = false;
 
 public:
+    bool get2Hearts() {
+        return m_Heart2;
+    }
     Card(int value, std::string suit);
 Card();
     bool operator>(Card other) {
