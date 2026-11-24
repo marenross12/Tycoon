@@ -12,7 +12,7 @@ private:
 public:
     TycoonGame();
     int getFinalScore() const;
-    void displayTycoonRules();
+    static void displayTycoonRules();
     void playGame();
 };
 

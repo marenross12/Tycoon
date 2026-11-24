@@ -11,9 +11,9 @@ private:
     char m_gameDifficulty;
 public:
     StartingMenu();
-private:
+//private:
     void displayGameTitle() const;
-    void displayMenuOptions();
+    static void displayMenuOptions();
     void selectMenuOption();
 };
 
