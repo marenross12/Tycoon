@@ -6,15 +6,18 @@
 #include <utility>
 #include <vector>
 #include "Player.h"
-class NPC {
+class NPC : public Player {
 private:
     std::string m_npcName;
     std::string m_npcRole;
     std::vector <Card> m_npcHand;
 public:
-    NPC(){}
+    NPC() {
+
+
+    }
     ~NPC() {
-        std::cout << "NPC object destroyed" << std::endl;
+        std::cout << "NPC object destroyed!!!! EVIL NPC DEFEATED!!!" << std::endl;
     }
     std::string getNPCName() {
         return m_npcName;
@@ -23,10 +26,13 @@ public:
         return m_npcHand;
     }
 private:
-    void checkForWinner(){}
+    
 public:
-    void playCard() {
-        //same as player playCard function
+    /*void playCard() {
+        //same as player playCard function why does it need to be here too?? are we overriding it?
+    }*/
+    std::string getNPCRole() {
+        return m_npcRole;
     }
     void setRole(std::string npcRole) {
         m_npcRole = npcRole;
