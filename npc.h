@@ -13,8 +13,6 @@ private:
     std::vector <Card> m_npcHand;
 public:
     NPC() {
-
-
     }
     ~NPC() {
         std::cout << "NPC object destroyed!!!! EVIL NPC DEFEATED!!!" << std::endl;
@@ -26,7 +24,7 @@ public:
         return m_npcHand;
     }
 private:
-    
+
 public:
     /*void playCard() {
         //same as player playCard function why does it need to be here too?? are we overriding it?

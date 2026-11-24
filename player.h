@@ -5,19 +5,14 @@
 #define PLAYER_PLAYER_H
 #include <iostream>
 #include <vector>
-#include "Card.h" //has to has access to card and deckOfCards and TycoonGame
+ //has to has access to card and deckOfCards and TycoonGame
 class Player {
 private:
     std::string m_playerName;
     std::string m_playerRole;
     std::vector <Card>m_playerHand;
 public:
-    Player(std::string n) { //somewhere needs to ask for player name
-        if (!n.empty()) {
-            m_playerName = n;
-        }
-        m_playerRole = "Poor"; //set default role as the poor/commoner??
-
+    Player() { //somewhere needs to ask for player name
     }
     ~Player() {
         std::cout << "Player object destroyed!!! MWWHAHAHAHAHAHA" << std::endl;
@@ -79,6 +74,9 @@ public:
     }
     std::string getRole() {
         return m_playerRole;
+    }
+    void fillHand(Card a) {
+        m_playerHand.push_back(a);
     }
 };
 
