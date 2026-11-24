@@ -1,38 +1,31 @@
-
+//abstract class
 #ifndef PLAYER_NPC_H
 #define PLAYER_NPC_H
+#include "players.h"
 #include <iostream>
 #include <string>
-#include <utility>
 #include <vector>
-#include "Player.h"
-class NPC : public Player {
+
+class NPC : public Players {
 private:
     std::string m_npcName;
     std::string m_npcRole;
     std::vector <Card> m_npcHand;
 public:
     NPC() {
+        m_npcRole = "Commoner";
+
     }
-    ~NPC() {
+    ~NPC() override {
         std::cout << "NPC object destroyed!!!! EVIL NPC DEFEATED!!!" << std::endl;
     }
-    std::string getNPCName() {
-        return m_npcName;
-    }
-    std::vector <Card> getNPCHand() {
-        return m_npcHand;
-    }
-private:
 
-public:
-    /*void playCard() {
-        //same as player playCard function why does it need to be here too?? are we overriding it?
-    }*/
-    std::string getNPCRole() {
-        return m_npcRole;
-    }
-    void setRole(std::string npcRole) {
+    std::string getNPCName() {return m_npcName;}
+    std::vector <Card> getNPCHand() {return m_npcHand;}
+
+    std::string getNPCRole() {return m_npcRole;}
+    virtual void speak()=0;
+    void setNPCRole(const std::string &npcRole) {
         m_npcRole = npcRole;
     }
 
